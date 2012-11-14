@@ -23,6 +23,7 @@ import java.util.Map.Entry;
 
 import org.bukkit.World;
 import org.getspout.spoutapi.block.SpoutBlock;
+import org.getspout.spoutapi.block.design.Axis;
 import org.getspout.spoutapi.block.design.GenericBlockDesign;
 import org.getspout.spoutapi.material.block.GenericCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
@@ -49,9 +50,9 @@ public class RepeaterChipBlock extends GenericCustomBlock {
 		design.setTexture(JukeIt.getInstance(), TextureFile.BLOCK_REPEATER_CHIP.getTexture());
 		
 		setBlockDesign(design, 0);
-		setBlockDesign(design.rotate(90), 1);
-		setBlockDesign(design.rotate(180), 2);
-		setBlockDesign(design.rotate(270), 3);
+		setBlockDesign(design.rotate(90, Axis.Y), 1);
+		setBlockDesign(design.rotate(180, Axis.Y), 2);
+		setBlockDesign(design.rotate(270, Axis.Y), 3);
 		
 		//set up the tick thread.
 		JukeIt.getInstance().getServer().getScheduler().scheduleSyncRepeatingTask(JukeIt.getInstance(), new Runnable() {
