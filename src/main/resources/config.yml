@@ -6,4 +6,11 @@ allowWebServerUploads: true
 allowExternalURLs: true
 texturePack: default
 debug: false
-
+maxConnectedSpeakersAllowed: 4
+basicJukeboxRange: 7
+lowRangeJukeboxRange: 15
+midRangeJukeboxRange: 30
+longRangeJukeboxRange: 60
+maxRangeJukeboxRange: 100
+woodNeedleRange: 0
+blazeNeedleRange: .30

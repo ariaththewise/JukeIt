@@ -54,7 +54,9 @@ public class JukeboxMaxRange extends JukeboxBlock {
 	@Override
 	public int getRange()
 	{
-		return 100;
+		// Ariath's Patch - (JukeBoxMaxRange's range customizable).
+		return JukeIt.getInstance().getConfig().getInt("maxRangeJukeboxRange", 100);
+		// Ariath's Patch - END
 	}
 
 	@Override

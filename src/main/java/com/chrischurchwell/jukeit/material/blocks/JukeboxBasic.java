@@ -38,7 +38,9 @@ public class JukeboxBasic extends JukeboxBlock {
 	@Override
 	public int getRange()
 	{
-		return 7;
+		// Ariath's Patch - (JukeBoxBasic's range customizable).
+		return JukeIt.getInstance().getConfig().getInt("basicJukeboxRange", 7);
+		// Ariath's Patch - END
 	}
 	
 	@Override

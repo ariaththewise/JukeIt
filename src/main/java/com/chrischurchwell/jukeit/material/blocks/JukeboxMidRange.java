@@ -57,7 +57,9 @@ public class JukeboxMidRange extends JukeboxBlock {
 	@Override
 	public int getRange()
 	{
-		return 30;
+		// Ariath's Patch - (JukeBoxMidRange's range customizable).
+		return JukeIt.getInstance().getConfig().getInt("midRangeJukeboxRange", 30);
+		// Ariath's Patch - END
 	}
 
 	@Override

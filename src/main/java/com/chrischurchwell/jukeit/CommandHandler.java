@@ -174,4 +174,12 @@ public class CommandHandler implements CommandExecutor {
 		}
 		return true;
 	}
+	
+	// Ariath's Patch - (Allows to reload the config).
+	public Boolean reloadConfig(CommandSender sender, String[] args){
+		plugin.reloadConfig();
+		sender.sendMessage("Config reloaded.");
+		return true;
+	}
+	// Ariath's Patch - END
 }

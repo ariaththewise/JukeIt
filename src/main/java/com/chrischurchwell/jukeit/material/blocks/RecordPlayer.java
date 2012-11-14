@@ -388,13 +388,22 @@ public class RecordPlayer extends GenericCustomBlock implements WireConnector, C
 	public int getRange(Location location, RPNeedle needle) {
 		
 		int range = getRange();
-		HashMap<BlockFace,Speaker> blocks = getConnectedBlocks(location);
 		
-		if (blocks.size() == 1) {
-			range = range + 20;
-		} else if (blocks.size() > 1) {
-			range = range + 40;
+		// Ariath's Patch - (For each connected speaker, range extends 20).
+		int maxAllowedSpeakers = JukeIt.getInstance().getConfig().getInt("maxConnectedSpeakersAllowed");
+		// Ariath's Patch - END
+		
+		HashMap<BlockFace,Speaker> blocks = getConnectedBlocks(location);
+
+		// Ariath's Patch - (For each connected speaker, range extends 20).
+		if((blocks.size() > 0) && 
+			blocks.size() <= maxAllowedSpeakers){	
+			range += (blocks.size() * 20);
+			
+		} else if(blocks.size() > maxAllowedSpeakers){
+			range += (maxAllowedSpeakers * 20);
 		}
+		// Ariath's Patch - END
 		
 		Debug.debug("Needle modifier is: ", needle.rangeModifier());
 		range = range + ((int)Math.floor((double)range * needle.rangeModifier()));

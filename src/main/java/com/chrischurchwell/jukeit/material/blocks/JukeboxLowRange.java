@@ -51,7 +51,9 @@ public class JukeboxLowRange extends JukeboxBlock {
 	@Override
 	public int getRange()
 	{
-		return 15;
+		// Ariath's Patch - (JukeBoxLowRange's range customizable).
+		return JukeIt.getInstance().getConfig().getInt("lowRangeJukeboxRange", 15);
+		// Ariath's Patch - END
 	}
 	
 	@Override

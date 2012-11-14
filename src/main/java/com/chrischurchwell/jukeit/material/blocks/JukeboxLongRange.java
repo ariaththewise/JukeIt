@@ -52,7 +52,9 @@ public class JukeboxLongRange extends JukeboxBlock {
 	@Override
 	public int getRange()
 	{
-		return 60;
+		// Ariath's Patch - (JukeBoxLongRange's range customizable).
+		return JukeIt.getInstance().getConfig().getInt("longRangeJukeboxRange", 60);
+		// Ariath's Patch - END
 	}
 	
 	@Override

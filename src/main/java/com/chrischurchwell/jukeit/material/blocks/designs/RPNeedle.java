@@ -20,13 +20,16 @@ package com.chrischurchwell.jukeit.material.blocks.designs;
 
 import org.getspout.spoutapi.material.CustomItem;
 
+import com.chrischurchwell.jukeit.JukeIt;
 import com.chrischurchwell.jukeit.material.Items;
 
 
 public enum RPNeedle {
+	// Ariath's Patch - (Custom needle range modifiers).
 	NONE		(0,		0, null),
-	WOOD_FLINT	(32,	0, Items.woodflintNeedle),
-	BLAZE_FLINT	(33,	.30, Items.blazeflintNeedle);
+	WOOD_FLINT	(32,	JukeIt.getInstance().getConfig().getDouble("woodNeedleRange", 0), Items.woodflintNeedle),
+	BLAZE_FLINT	(33,	JukeIt.getInstance().getConfig().getDouble("blazeNeedleRange", .30), Items.blazeflintNeedle);
+	// Ariath's Patch - END
 	
 	private final int textureId;
 	private final double rangeModifier;
